@@ -24,16 +24,15 @@ class people:
         print("发短信啦，内容是：",con)
 
     def Calling(self,Number,PhoneNum,time):#Number是本人的号码，PhoneNum是其他人的号码
-        if PhoneNum not in pn:
-            if PhoneNum != Number:
-                if self.PhoneWords > 1:
+        if self.PhoneWords > 1:
+            if PhoneNum  in pn:
+                if PhoneNum != Number:
                     print("通话成功！！！！")
-                    call(time)
-                else :
-                    print("您的话费余额不足一元￥￥￥￥￥")
-            else:
-                print("与本人的号码相同？？？？")
-        print("此号码是空号@@@@")
+                    a.call(time)
+                else:print("与本人的号码相同？？？？")
+            else:print("此号码是空号@@@@")
+        else:
+            print("您的话费余额不足一元￥￥￥￥￥")
 
     def call(self,time):
         if time>=0 and time<=10:
@@ -53,13 +52,11 @@ a=people()
 a.Name="小红"
 a.Age=18
 a.Sex="女"
-a.PhoneWords=12
+a.PhoneWords=20
 a.PhoneBrand="华为"
 a.PoneBttery=30.0
 a.PhoneSize=15.5
 a.PhoneTime=30.5
 a.Integral=20
 a.Texing("哦哈哈")
-a.Calling(222222222,222222222,10)
-a.call(10)
-
+a.Calling("222222222","111111111",10)
